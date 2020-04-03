@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "768679999202",
+    "firebase_url": "https://flutter-test-860b4.firebaseio.com",
+    "project_id": "flutter-test-860b4",
+    "storage_bucket": "flutter-test-860b4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:768679999202:android:bd8237c67fe65e7da9d0bb",
+        "android_client_info": {
+          "package_name": "com.hypertrack.quickstartflutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "768679999202-g06rqdfr0urskmki3u46via8vtvvdpb9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-RcDVCxdkSQQ2Wdbf7mrm5mpoQqZQgKM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "768679999202-g06rqdfr0urskmki3u46via8vtvvdpb9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
