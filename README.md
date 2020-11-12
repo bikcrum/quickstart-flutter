@@ -143,7 +143,7 @@ How ***hypertrack*** messaging service is declared in AndroidManifest.xml file i
 How ***firebase*** messaging service is declared in AndroidManifest.xml file in it's SDK
 ```
 <service android:name="io.flutter.plugins.firebasemessaging.FlutterFirebaseMessagingService">
-      <intent-filter android:priority="6">
+      <intent-filter>
             <action android:name="com.google.firebase.MESSAGING_EVENT"/>
       </intent-filter>
 </service>
