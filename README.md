@@ -126,6 +126,37 @@ curl -X POST \
 If you want to track a device going to a list of places, call the [Trips API](https://hypertrack.com/docs/references/#references-apis-trips-start-trip-with-geofences)
 and add geofences. This way you will get arrival, exit, time spent and route to geofences. Please checkout our [docs](https://hypertrack.com/docs/references/#references-apis-trips) for more details.
 
+### Important notice
+
+If you are using firebase_messaging plugin alongside, you might not get message in Android. This is because hypertrack is set to higher priority (5 at the moment). To resolve it override declaration of firebase messaging service in the AndroidManifest.xml file and increase its priority.
+
+How ***hypertrack*** messaging service is declared in AndroidManifest.xml file in it's SDK
+```
+ <service
+      android:name="com.hypertrack.sdk.HyperTrackMessagingService"
+      android:exported="false" >
+      <intent-filter android:priority="5">
+            <action android:name="com.google.firebase.MESSAGING_EVENT" />
+      </intent-filter>
+ </service>
+```
+How ***firebase*** messaging service is declared in AndroidManifest.xml file in it's SDK
+```
+<service android:name="io.flutter.plugins.firebasemessaging.FlutterFirebaseMessagingService">
+      <intent-filter>
+            <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+      </intent-filter>
+</service>
+```
+Set higher priority to firebase messaging service in your own AndroidManifest.xml. This will override their declaration.
+```
+<service android:name="io.flutter.plugins.firebasemessaging.FlutterFirebaseMessagingService">
+      <intent-filter android:priority="100">
+            <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+      </intent-filter>
+</service>
+```
+
 ## Dashboard
 
 Once your app is running, go to the [dashboard](https://dashboard.hypertrack.com/devices) where you can see a list of all your devices and their live location with ongoing activity on the map.
